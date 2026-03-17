@@ -1,0 +1,82 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFFE3;
+    color: #4A4A4A;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+h1{
+    background-color: #6D8196;
+    color: white;
+    padding: 40px 0;
+    margin: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    position: relative;
+    top: 100%;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* Paragraph text */
+p{
+    font-size: 18px;
+    margin: 20px;
+}
+
+/* Search bar */
+input{
+    padding: 10px;
+    width: 250px;
+    border-radius: 6px;
+    border: 2px solid #CBCBCB;
+    margin-right: 10px;
+}
+
+/* Dropdown */
+select{
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid #CBCBCB;
+}
+
+/* Buttons */
+button{
+    background-color: #6D8196;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin: 5px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover{
+    background-color: #4A4A4A;
+}
+
+/* Section spacing */
+h3{
+    margin-top: 30px;
+}
+
+/* Popular services button container */
+.services{
+    margin-top: 10px;
+}
+
+/* Simple card styling if you add service listings later */
+.service-card{
+    background-color: #CBCBCB;
+    padding: 15px;
+    margin: 15px auto;
+    width: 300px;
+    border-radius: 8px;
+}
