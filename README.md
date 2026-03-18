@@ -2,7 +2,7 @@
 
 --- TEAM MEMBERS & ROLES ---
 - Kayno Speights: Frontend Developer
-- Chance Walker
+- Chance Walker: Future Planner
 - Michael Hall
 - JaDaeyah OBryant Murray
 - Christian White
