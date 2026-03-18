@@ -1,58 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<title>Register Business</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Business | Campus Connect</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <header>
+    <h1>Campus Connect</h1>
+    <p>Start Offering Your Services to the Campus Community</p>
 
-<h1>Campus Connect</h1>
-
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Browse Services</a>
+        <a href="register.html">Register Business</a>
+        <a href="about.html">About</a>
+    </nav>
 </header>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Browse Services</a>
-<a href="register.html">Register Business</a>
-<a href="about.html">About</a>
-</nav>
 
 <div class="container">
 
-<h2>Start Offering Your Services</h2>
+    <h2>Register Your Student Business</h2>
+    <p>Fill out the form below to start connecting with other students and offering your services.</p>
 
-<form>
+    <form class="register-form">
+        <input type="text" placeholder="Your Name" required><br>
 
-<input type="text" placeholder="Your Name"><br><br>
+        <input type="text" placeholder="Service Offered" required><br>
 
-<input type="text" placeholder="Service Offered"><br><br>
+        <input type="text" placeholder="Price" required><br>
 
-<input type="text" placeholder="Price"><br><br>
+        <select required>
+            <option value="">Select Category</option>
+            <option>Hair Services</option>
+            <option>Beauty</option>
+            <option>Food</option>
+            <option>Tutoring</option>
+            <option>Tech Help</option>
+        </select><br>
 
-<select>
-<option>Select Category</option>
-<option>Hair Services</option>
-<option>Beauty</option>
-<option>Food</option>
-<option>Tutoring</option>
-<option>Tech Help</option>
-</select>
+        <textarea placeholder="Additional Details (optional)" rows="4"></textarea><br>
 
-<br><br>
-
-<button type="submit">Register Service</button>
-
-</form>
+        <button type="submit">Register Service</button>
+    </form>
 
 </div>
 
 <footer>
-<p>Campus Connect © 2026</p>
+    <p>© 2026 Campus Connect • Built for students, by students</p>
 </footer>
+
+<!-- AI ASSISTANT CHATBOX -->
+<div class="chat-container">
+
+    <div class="chat-header">
+        Campus Connect Assistant
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+        <div class="bot-message">
+            Hi! I'm your Campus Connect assistant. Ask me for recommendations or services near you.
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Try: 'Best hairstyles for short hair'">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script src="chatbot.js"></script>
 
 </body>
 </html>

@@ -9,52 +9,184 @@
 <body>
 
 <header>
+    <h1>Campus Connect</h1>
+    <p>Browse Student Services</p>
 
-<h1>Campus Connect</h1>
-
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Browse Services</a>
+        <a href="register.html">Register Business</a>
+        <a href="about.html">About</a>
+    </nav>
 </header>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Browse Services</a>
-<a href="register.html">Register Business</a>
-<a href="about.html">About</a>
-</nav>
 
 <div class="container">
 
 <h2>Available Student Services</h2>
 
+<!-- SEARCH + FILTER -->
+<div class="search-box">
+
+<input type="text" id="searchInput" placeholder="Search services..." onkeyup="searchServices()">
+
+<select id="categoryFilter" onchange="filterServices()">
+<option>All Services</option>
+<option>Hair Braiding</option>
+<option>Haircuts</option>
+<option>Nails</option>
+<option>Home Cooked Meals</option>
+<option>Tutoring</option>
+<option>Photography</option>
+<option>Laundry Help</option>
+<option>Tech Help</option>
+</select>
+
+</div>
+
+<br>
+
 <div class="services">
 
-<div class="service-card">
+<!-- SERVICES -->
+
+<div class="service-card" data-category="Hair Braiding">
 <h3>Jordan</h3>
-<p>Hair Braiding</p>
+<p><strong>Hair Braiding</strong></p>
+<p>⭐ 4.8 | 32 reviews</p>
 <p>$40</p>
 <button>Book</button>
 </div>
 
-<div class="service-card">
+<div class="service-card" data-category="Tutoring">
 <h3>Alex</h3>
-<p>Tutoring</p>
+<p><strong>Tutoring</strong></p>
+<p>⭐ 4.6 | 18 reviews</p>
 <p>$20/hr</p>
 <button>Book</button>
 </div>
 
-<div class="service-card">
+<div class="service-card" data-category="Home Cooked Meals">
 <h3>Maya</h3>
-<p>Meal Prep</p>
+<p><strong>Home Cooked Meals</strong></p>
+<p>⭐ 4.9 | 45 reviews</p>
 <p>$10 per meal</p>
 <button>Order</button>
 </div>
 
+<div class="service-card" data-category="Haircuts">
+<h3>Chris</h3>
+<p><strong>Haircuts</strong></p>
+<p>⭐ 4.7 | 27 reviews</p>
+<p>$25</p>
+<button>Book</button>
+</div>
+
+<div class="service-card" data-category="Nails">
+<h3>Naomi</h3>
+<p><strong>Nail Tech</strong></p>
+<p>⭐ 5.0 | 21 reviews</p>
+<p>$30</p>
+<button>Book</button>
+</div>
+
+<div class="service-card" data-category="Tech Help">
+<h3>Devon</h3>
+<p><strong>Tech Help</strong></p>
+<p>⭐ 4.5 | 12 reviews</p>
+<p>$15/session</p>
+<button>Book</button>
+</div>
+
+<div class="service-card" data-category="Photography">
+<h3>Lena</h3>
+<p><strong>Photography</strong></p>
+<p>⭐ 4.9 | 36 reviews</p>
+<p>$50/session</p>
+<button>Book</button>
+</div>
+
+<div class="service-card" data-category="Laundry Help">
+<h3>Marcus</h3>
+<p><strong>Laundry Help</strong></p>
+<p>⭐ 4.4 | 14 reviews</p>
+<p>$10/load</p>
+<button>Book</button>
 </div>
 
 </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+function filterServices() {
+    let selected = document.getElementById("categoryFilter").value;
+    let cards = document.querySelectorAll(".service-card");
+
+    cards.forEach(card => {
+        let category = card.getAttribute("data-category");
+
+        if (selected === "All Services" || category === selected) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+function searchServices() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.querySelectorAll(".service-card");
+
+    cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+<!-- AI ASSISTANT CHATBOX -->
+<div class="chat-container">
+
+    <div class="chat-header">
+        Campus Connect Assistant
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+        <div class="bot-message">
+            Hi! I'm your Campus Connect assistant. Ask me for recommendations or services near you.
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Try: 'Best hairstyles for short hair'">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script src="chatbot.js"></script>
 
 <footer>
-<p>Campus Connect © 2026</p>
+<p>© 2026 Campus Connect • Built for students, by students</p>
 </footer>
+
+<script>
+window.onload = function() {
+    let category = localStorage.getItem("selectedCategory");
+    if (category) {
+        document.getElementById("categoryFilter").value = category;
+        filterServices(); // call the function you already have that filters by dropdown
+        localStorage.removeItem("selectedCategory"); // clean up so it doesn’t affect future visits
+    }
+};
+</script>
 
 </body>
 </html>

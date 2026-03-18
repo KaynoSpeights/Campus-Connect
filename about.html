@@ -1,46 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<title>About Campus Connect</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Campus Connect</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <header>
+    <h1>Campus Connect</h1>
+    <p>Connecting Students. Empowering Campus Talent.</p>
 
-<h1>Campus Connect</h1>
-
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Browse Services</a>
+        <a href="register.html">Register Business</a>
+        <a href="about.html">About</a>
+    </nav>
 </header>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Browse Services</a>
-<a href="register.html">Register Business</a>
-<a href="about.html">About</a>
-</nav>
 
 <div class="container">
 
-<h2>Our Mission</h2>
+    <!-- HERO / MISSION SECTION -->
+    <section class="hero">
+        <h2>Our Mission</h2>
+        <p>
+            Campus Connect helps students without transportation access local services on campus
+            while empowering other students to earn money through their skills.
+        </p>
+        <p>
+            From hair styling to tutoring and home-cooked meals, Campus Connect builds a stronger
+            and more connected campus community.
+        </p>
+    </section>
 
-<p>
-Campus Connect helps students without transportation
-access local services on campus while helping other
-students earn money through their skills.
-</p>
+    <!-- HIGHLIGHTS / FEATURES -->
+    <section class="features">
+        <h2>Why Campus Connect?</h2>
+        <div class="feature-cards">
 
-<p>
-From hair styling to tutoring and home-cooked meals,
-Campus Connect builds a stronger campus community.
-</p>
+            <div class="service-card">
+                <h3>Support Local Talent</h3>
+                <p>Connect with students offering unique services across campus.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Earn and Learn</h3>
+                <p>Students can monetize their skills while building experience.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Convenience on Campus</h3>
+                <p>Access hair, food, tutoring, and tech services without leaving campus.</p>
+            </div>
+
+        </div>
+    </section>
 
 </div>
 
 <footer>
-<p>Campus Connect © 2026</p>
+    <p>© 2026 Campus Connect • Built for students, by students</p>
 </footer>
+
+<!-- AI ASSISTANT CHATBOX -->
+<div class="chat-container">
+
+    <div class="chat-header">
+        Campus Connect Assistant
+    </div>
+
+    <div id="chatMessages" class="chat-messages">
+        <div class="bot-message">
+            Hi! I'm your Campus Connect assistant. Ask me for recommendations or services near you.
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Try: 'Best hairstyles for short hair'">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script src="chatbot.js"></script>
 
 </body>
 </html>

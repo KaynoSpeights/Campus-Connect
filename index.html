@@ -1,98 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-<title>Campus Connect</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Connect</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <header>
+    <h1>Campus Connect</h1>
+    <p>Connect. Earn. Support Your Campus.</p>
 
-<h1>Campus Connect</h1>
-
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Browse Services</a>
+        <a href="register.html">Register Business</a>
+        <a href="about.html">About</a>
+    </nav>
 </header>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Browse Services</a>
-<a href="register.html">Register Business</a>
-<a href="about.html">About</a>
-</nav>
 
 <div class="container">
 
-<h2>Search for a Service</h2>
+    <!-- HERO / SEARCH SECTION -->
+    <section class="hero">
+        <h2>Find Services Near You</h2>
+        <p>Discover student-run businesses on campus and connect with local talent.</p>
 
-<input type="text" list="suggestions" placeholder="Search services...">
+        <div class="search-box">
+            <input type="text" id="searchInput" list="suggestions" placeholder="Search services...">
 
-<datalist id="suggestions">
-<option value="Hair Braiding">
-<option value="Haircuts">
-<option value="Nails">
-<option value="Home Cooked Meals">
-<option value="Tutoring">
-<option value="Photography">
-<option value="Laundry Help">
-<option value="Tech Help">
-</datalist>
+            <datalist id="suggestions">
+                <option value="Hair Braiding">
+                <option value="Haircuts">
+                <option value="Nails">
+                <option value="Home Cooked Meals">
+                <option value="Tutoring">
+                <option value="Photography">
+                <option value="Laundry Help">
+                <option value="Tech Help">
+            </datalist>
 
-<br><br>
+            <button onclick="goToService()">Search</button>
+        </div>
+    </section>
 
-<button onclick="location.href='services.html'">Search Services</button>
+    <!-- POPULAR SERVICES -->
+    <section>
+        <h2>Popular Services</h2>
 
-<h2>Popular Services</h2>
+        <div class="services">
 
-<div class="services">
+            <div class="service-card">
+                <h3>Hair Braiding</h3>
+                <p>Student Stylists</p>
+                <button onclick="goToCategory('Hair Braiding')">View</button>
+            </div>
 
-<div class="service-card">
-<h3>Hair Braiding</h3>
-<p>Student Stylists</p>
-<button onclick="location.href='services.html'">View</button>
-</div>
+            <div class="service-card">
+                <h3>Nail Tech</h3>
+                <p>Student Nail Artists</p>
+                <button onclick="goToCategory('Nails')">View</button>
+            </div>
 
-<div class="service-card">
-<h3>Nail Tech</h3>
-<p>Student Nail Artists</p>
-<button onclick="location.href='services.html'">View</button>
-</div>
+            <div class="service-card">
+                <h3>Home Cooked Meals</h3>
+                <p>Affordable student meals</p>
+                <button onclick="goToCategory('Home Cooked Meals')">View</button>
+            </div>
 
-<div class="service-card">
-<h3>Home Cooked Meals</h3>
-<p>Affordable student meals</p>
-<button onclick="location.href='services.html'">View</button>
-</div>
+            <div class="service-card">
+                <h3>Tutoring</h3>
+                <p>Academic help from peers</p>
+                <button onclick="goToCategory('Tutoring')">View</button>
+            </div>
 
-</div>
+            <div class="service-card">
+                <h3>Photography</h3>
+                <p>Capture your campus moments</p>
+                <button onclick="goToCategory('Photography')">View</button>
+            </div>
+
+        </div>
+    </section>
 
 </div>
 
 <!-- AI ASSISTANT CHATBOX -->
-
 <div class="chat-container">
 
-<div class="chat-header">
-Campus Connect Assistant
-</div>
+    <div class="chat-header">
+        Campus Connect Assistant
+    </div>
 
-<div id="chatMessages" class="chat-messages">
-<div class="bot-message">
-Hi! I'm your Campus Connect assistant. How can I help?
-</div>
-</div>
+    <div id="chatMessages" class="chat-messages">
+        <div class="bot-message">
+            Hi! I'm your Campus Connect assistant. Ask me for recommendations or services near you.
+        </div>
+    </div>
 
-<div class="chat-input">
-<input type="text" id="userInput" placeholder="Ask about services...">
-<button onclick="sendMessage()">Send</button>
-</div>
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Try: 'Best hairstyles for short hair'">
+        <button onclick="sendMessage()">Send</button>
+    </div>
 
 </div>
 
 <script src="chatbot.js"></script>
 
+<script>
+// Redirect search input to services page
+function goToService() {
+    let input = document.getElementById("searchInput").value;
+    if (input) {
+        // store in localStorage to use for filtering on services page
+        localStorage.setItem("selectedCategory", input);
+    }
+    window.location.href = "services.html";
+}
+
+// Redirect button to services page filtered by category
+function goToCategory(category) {
+    localStorage.setItem("selectedCategory", category);
+    window.location.href = "services.html";
+}
+</script>
+
 <footer>
-<p>Campus Connect © 2026</p>
+    <p>© 2026 Campus Connect • Built for students, by students</p>
 </footer>
 
 </body>
