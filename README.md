@@ -4,7 +4,7 @@
 - Kayno Speights: Frontend Developer
 - Chance Walker: Future Planner
 - Michael Hall
-- JaDaeyah OBryant Murray
+- JaDaeyah OBryant Murray: Communication Lead
 - Christian White
 - Henry Weah
 
