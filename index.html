@@ -1,48 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Campus Connect</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<style>
-body{
-    font-family: Arial;
-    text-align: center;
-    margin: 40px;
-}
-
-button{
-    padding:10px;
-    margin:5px;
-    cursor:pointer;
-}
-
-input{
-    padding:10px;
-    width:250px;
-}
-
-select{
-    padding:10px;
-}
-
-</style>
-</head>
-
 <body>
+
+<header>
 
 <h1>Campus Connect</h1>
 
-<p>
-Welcome to Campus Connect! <br>
-Find local small businesses and connect with your campus community.
-</p>
+</header>
 
-<!-- SEARCH BAR -->
-<h3>Search for a Service</h3>
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Browse Services</a>
+<a href="register.html">Register Business</a>
+<a href="about.html">About</a>
+</nav>
 
-<input type="text" id="searchBar" list="suggestions" placeholder="Search services...">
+<div class="container">
+
+<h2>Search for a Service</h2>
+
+<input type="text" list="suggestions" placeholder="Search services...">
 
 <datalist id="suggestions">
 <option value="Hair Braiding">
@@ -55,53 +38,62 @@ Find local small businesses and connect with your campus community.
 <option value="Tech Help">
 </datalist>
 
-<button onclick="searchService()">Search</button>
-
 <br><br>
 
-<!-- DROPDOWN MENU -->
+<button onclick="location.href='services.html'">Search Services</button>
 
-<h3>Browse by Category</h3>
+<h2>Popular Services</h2>
 
-<select id="category">
-<option value="">Select a category</option>
-<option value="Hair Services">Hair Services</option>
-<option value="Beauty">Beauty</option>
-<option value="Food">Food</option>
-<option value="Tutoring">Tutoring</option>
-<option value="Tech Help">Tech Help</option>
-</select>
+<div class="services">
 
-<button onclick="browseCategory()">Browse</button>
+<div class="service-card">
+<h3>Hair Braiding</h3>
+<p>Student Stylists</p>
+<button onclick="location.href='services.html'">View</button>
+</div>
 
-<br><br>
+<div class="service-card">
+<h3>Nail Tech</h3>
+<p>Student Nail Artists</p>
+<button onclick="location.href='services.html'">View</button>
+</div>
 
-<!-- QUICK ACCESS BUTTONS -->
+<div class="service-card">
+<h3>Home Cooked Meals</h3>
+<p>Affordable student meals</p>
+<button onclick="location.href='services.html'">View</button>
+</div>
 
-<h3>Popular Services</h3>
+</div>
 
-<button onclick="quickSearch('Hair Braiding')">Hair Braiding</button>
-<button onclick="quickSearch('Nails')">Nail Tech</button>
-<button onclick="quickSearch('Home Cooked Meals')">Home Cooked Meals</button>
-<button onclick="quickSearch('Tutoring')">Tutoring</button>
+</div>
 
-<script>
+<!-- AI ASSISTANT CHATBOX -->
 
-function searchService(){
-    let service = document.getElementById("searchBar").value;
-    alert("Searching for: " + service);
-}
+<div class="chat-container">
 
-function browseCategory(){
-    let category = document.getElementById("category").value;
-    alert("Browsing category: " + category);
-}
+<div class="chat-header">
+Campus Connect Assistant
+</div>
 
-function quickSearch(service){
-    alert("Searching for: " + service);
-}
+<div id="chatMessages" class="chat-messages">
+<div class="bot-message">
+Hi! I'm your Campus Connect assistant. How can I help?
+</div>
+</div>
 
-</script>
+<div class="chat-input">
+<input type="text" id="userInput" placeholder="Ask about services...">
+<button onclick="sendMessage()">Send</button>
+</div>
+
+</div>
+
+<script src="chatbot.js"></script>
+
+<footer>
+<p>Campus Connect © 2026</p>
+</footer>
 
 </body>
 </html>
