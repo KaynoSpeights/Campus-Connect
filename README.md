@@ -3,10 +3,10 @@
 --- TEAM MEMBERS & ROLES ---
 - Kayno Speights: Frontend Developer
 - Chance Walker: Future Planner
-- Michael Hall
+- Michael Hall: Organizer Planner
 - JaDaeyah OBryant Murray: Communication Lead
-- Christian White
-- Henry Weah
+- Christian White: Research Specialist
+- Henry Weah: Creative Lead
 
 --- PROBLEM, TARGET USER, VALUE ---
 
